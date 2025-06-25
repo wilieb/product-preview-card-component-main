@@ -2,35 +2,151 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   
   <title>Frontend Mentor | Product preview card component</title>
 
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,700;1,700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,700;1,9..144,700&display=swap');
+
     .attribution { font-size: 11px; text-align: center; }
     .attribution a { color: hsl(228, 45%, 44%); }
+
+    *{
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    section {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: hsl(30, 38%, 92%);
+      padding: 2rem;
+      margin: 0;
+      height: 100vh;
+    }
+
+    .bg-img {
+      width: 100%;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      border-radius: 0.75rem 0.75rem 0 0;
+    }
+
+    @media (max-width: 30rem) {
+      .bg-img {
+        height: 250px;
+        background-image: url('./images/image-product-mobile.jpg');
+      }
+      .content h1 {
+        line-height: 2rem;
+      }
+    }
+
+    .flex {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.75rem;
+    }
+
+    .content {
+      background-color: white;
+      padding: 1.5rem;
+      border-radius: 0 0 0.75rem 0.75rem;
+      width: 100%;
+      margin: 0;
+      text-align: start;
+    }
+
+    .content h6 {
+      color: hsl(228, 12%, 48%);
+      font-weight: 500;
+      font-size: clamp(0.75rem, 0.5rem + 1vw, 2.5rem);
+      margin-bottom: .75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5rem;
+    }
+
+    .content h1 {
+      color: hsl(212, 21%, 14%);
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+      margin-bottom: 0.75rem;
+    }
+
+    .content p {
+      color: hsl(228, 12%, 48%);
+      font-size: 0.875rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .price {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .add-to-cart {
+      width: 100% !important;
+      background-color: hsl(158, 36%, 37%);
+      color: white;
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 0.4rem;
+      font-weight: 500;
+      font-size: clamp(0.875rem, 0.75rem + 1vw, 1.25rem);
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .new-price {
+      color: hsl(158, 36%, 37%);
+      font-family: 'Fraunces', serif;
+      font-weight: 700;
+      font-size: clamp(2rem, 1.5rem + 2vw, 3rem);
+    }
+
+    .old-price {
+      color: hsl(228, 12%, 48%);
+      font-size: 0.875rem;
+      text-decoration: line-through;
+    }
   </style>
 </head>
 <body>
-
-  Perfume
-
-  Gabrielle Essence Eau De Parfum
-
-  A floral, solar and voluptuous interpretation composed by Olivier Polge, 
-  Perfumer-Creator for the House of CHANEL.
-
-  $149.99
-  $169.99
-
-  Add to Cart
+  <section>
+    <div class="bg-img"></div>
+    <div class="content">
+      <h6>Perfume</h6>
+      <h1>Gabrielle Essence <br>Eau De Parfum</h1>
+      <p>A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+      Perfumer-Creator for the House of CHANEL.</p>
+      <div class="price">
+        <span class="new-price">$149.99</span>
+        <span class="old-price">$169.99</span> 
+      </div>
+      <button class="add-to-cart flex">
+        <img src="./images/icon-cart.svg" alt="cart">
+        Add to Cart
+      </button>
+    </div>
+  </section>
   
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    Coded by <a href="#">wilieb</a>.
   </div>
 </body>
 </html>
